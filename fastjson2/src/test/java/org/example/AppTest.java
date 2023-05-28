@@ -1,38 +1,35 @@
 package org.example;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONObject;
+import org.example.entity.School;
+import org.example.util.SchoolUtil;
+import org.junit.Test;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+public class AppTest {
+
+
+    @Test
+    public void test01() {
+
+        School schoolData = SchoolUtil.getSchoolData();
+
+        JSONObject info = new JSONObject();
+        info.put("name", "张三");
+        info.put("age", "18");
+        info.put("地理", "70");
+        info.put("英语", "60");
+
+        //JSON对象转字符串
+        String str = JSON.toJSONString(schoolData);
+        //JSON字符串转JSON对象
+        JSONObject json = JSONObject.parseObject(str);
+
+        System.out.println(json);
+
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
 }

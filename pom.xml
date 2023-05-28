@@ -15,6 +15,7 @@
     <module>gson</module>
     <module>jackson</module>
     <module>moshi</module>
+    <module>jsonInJava</module>
   </modules>
 
   <properties>
@@ -70,6 +71,14 @@
         <artifactId>moshi</artifactId>
         <version>1.15.0</version>
         <scope>runtime</scope>
+      </dependency>
+
+
+      <!-- https://mvnrepository.com/artifact/org.json/json -->
+      <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20230227</version>
       </dependency>
 
 
