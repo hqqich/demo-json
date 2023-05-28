@@ -20,7 +20,7 @@ import lombok.ToString;
 @ToString
 public class School {
 
-    private int id;
+    private Long id;
 
     private String name;
 

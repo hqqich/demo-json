@@ -17,9 +17,11 @@ import org.example.entity.StudentScore;
 
 public class SchoolUtil {
 
+	private static final SnowflakeIdWorker idWorker = new SnowflakeIdWorker(0, 0);
+
 
 	public static School getSchoolData() {
-		return new School(0, "沙雕大学", getSchoolDetail(), getStudents());
+		return new School(idWorker.nextId(), "沙雕大学", getSchoolDetail(), getStudents());
 	}
 
 	private static SchoolDetail getSchoolDetail() {
@@ -64,5 +66,11 @@ public class SchoolUtil {
 		return Schools;
 	}
 
+
+	public static void main(String[] args) {
+		List<School> schoolsData = getSchoolsData();
+
+		System.out.println(schoolsData);
+	}
 
 }
